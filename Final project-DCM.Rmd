@@ -1,0 +1,573 @@
+---
+title: "Final Project-DCM"
+author: "Yan Gao"
+date: "2023-03-23"
+output:
+  pdf_document: default
+  word_document: default
+---
+## Report
+
+## Abstract
+
+In this study, we aimed to examine how individual-level and party-level left-right political views relate to party choice in European countries. We used data from the 9th round of the European Social Survey (ESS) and Party Manifesto Data, and employed conditional logistic regression to analyze the relationship between party choice and the interaction effects of gender, age, education, and placement on the left-right scale, both at the individual and party level.
+
+The findings showed that left-right ideology was a significant predictor of party choice, with voters who placed themselves on the left tending to choose parties that also positioned themselves on the left, and vice versa for those on the right. Furthermore, this study found that the relationship between ideology and party choice differed depending on individual-level characteristics such as gender, age, and education.
+
+These findings contribute to understand of how political attitudes and demographics intersect to shape voting behavior in European countries. Theoretical background suggests that party choice is influenced by both individual-level factors, such as ideology and demographics, as well as party-level factors such as party platforms and campaign strategies. This study sheds light on the complex interplay between these factors and their impact on voting behavior, highlighting the importance of considering both individual and party-level factors when examining political preferences.
+
+## Introduction 
+
+|  Political ideology can be a significant factor in voting behavior in Europe. Generally, individuals on the left tend to support policies that prioritize social welfare, public services, and workers' rights, while those on the right favor policies that promote individual freedom, free markets, and limited government intervention.
+
+|  In Europe, countries differ in their political spectrum and how they position left/right on the political spectrum. For instance, Scandinavian countries, such as Sweden, Denmark, and Norway, are typically viewed as having left-leaning political systems, while Eastern European countries tend to be more right-leaning.
+
+|  Political scientists have long been interested in understanding the factors that influence party choice in elections. Previous research suggests that party choice is influenced by both individual-level factors, such as ideology and demographics, as well as party-level factors such as party platforms and campaign strategies. The present study seeks to analyze how left-right political views are related to party choice in Europe, using data from the European Social Survey (ESS) and Party Manifesto Data. The main research question of this study is: how are left-right political views related to party choice in Europe, when considering left-right ideological placement at the party and individual level as explanatory variables. 
+
+|  The study uses data from the 9th (2018) round of the European Social Survey (ESS) and Party Manifesto Data. The ESS is a cross-national survey that collects data on social attitudes and behavior in Europe, while Party Manifesto Data provides information on the ideological positions of political parties. The analysis is conducted using conditional logistic regression, with individual-level factors such as age, education, gender, and left-right political views, as well as party-level factors such as the ideological placement of the party. 
+
+|  The results of the study show that left-right political views are significantly related to party choice in Europe. Specifically, individuals with more left-wing views are more likely to vote for left-wing parties, while individuals with more right-wing views are more likely to vote for right-wing parties. Additionally, the study finds that individual-level factors such as age, education, and gender, also play a significant role in party choice. The study provides important insights into the factors that shape party choice in Europe and has implications for political parties and policymakers.
+
+
+## Background
+
+|  Political ideology, particularly left-right ideology, has long been recognized as a key factor in shaping political preferences and behavior (Dalton, R. J,2008). The left-right spectrum generally refers to the degree of support for social and economic equality, with those on the left advocating for greater government intervention and redistribution of resources, and those on the right favoring limited government and free market policies.The relationship between individual political ideology and party choice has been a topic of interest for many researchers in political science. In addition to ideology, demographic factors such as age, gender, and education have also been found to play a role in shaping political attitudes and behavior (Holman, L., Head, J.,2020).For example, in Knutsen, O(2018)'s paper, younger individuals and those with higher levels of education are often more liberal and left-leaning, while older individuals and those with less education tend to be more conservative and right-leaning (Knutsen, O,2018).In this study,individuals identify with particular social groups and that their political beliefs and attitudes are influenced by their group identities. Party choice can be seen as a reflection of an individual's group identity, rather than their individual political ideology  (Evans, G., & Tilley, J,2017). 
+
+
+## Data and methods 
+
+| The data used in this study is based on the 9th (2018) round of the European Social Survey (ESS). The ESS is a biennial survey that covers a wide range of social and political issues, including party choice and political ideology.
+
+|  Party choice is operationalised as a categorical variable with four levels (left, right, liberal, and other). Political views are operationalised as a continuous variable measured on a left-right scale. Demographic variables include gender, age, and education. Model B: A linear regression model was used to investigate the relationship between political views and party choice, controlling for demographic variables.Model C: A logistic regression model was used to investigate the relationship between political views and the odds of choosing a left-wing party, controlling for demographic variables.
+
+|  Model D: An ordered logistic regression model was used to investigate the relationship between political views and the ordinal variable of party choice, controlling for demographic variables.
+In addition to these models, the study also estimates a conditional logistic regression model (clogit) to examine the relationship between left-right ideology and party choice while controlling for individual-level factors. While controlling for individual-level factors such as gender, age, education, and left-right political views. The conditional logistic regression model was used because the data was in a paired format, with each individual having made a choice among four parties.
+
+|  Model specification:
+|  All models included gender, age, and education as control variables. The linear regression model (Model B) included political views as the independent variable and party choice as the dependent variable. The logistic regression model (Model C) included a binary variable for left-wing party choice as the dependent variable and political views as the independent variable. The ordered logistic regression model (Model D) included party choice as the dependent variable and political views as the independent variable. The conditional logistic regression model (Clogit model) included party choice as the dependent variable and political views, gender, age, education, and an interaction term between gender and political views as independent variables. All models were estimated using R software, with significance level set at p < 0.05.
+
+##Results: 
+
+## Task 1
+
+## Statistic descriptive table
+
+| The table for task 1  provides descriptive statistics for the participants in the 2018 Europe Election (ESS).The total number of participants is 15126.The participants' age ranges from 15 to 90 years old, with a mean of not given in the table.There are 51% of the participants are female,29% of the participants have high education. This table also provides separate descriptive statistics for participants who voted and those who did not vote by creating a factor variable "vote.left" from the "vote" variable in the dataset.  There are 10,543 participants voted, 50% of those who voted are female, and 27% of those who voted have high education. 4583 participants did not vote, the age range and mean for those who did not vote is not given in the table. 55% of those who did not vote are female, 32% of those who did not vote have high education.
+
+## Model result
+
+The table shows the results of two binary logistic regression models examining the relationship between left-right political views and participation in the 2018 election, controlling for age, education, and gender. Model A includes only the control variables, while Model B includes the control variables and left-right political views. 
+
+Age (years): In Model A, the coefficient for age is not significant (-0.001), whereas in Model B, the coefficient is significant and negative(-0.004), indicating that as age increases by one unit, the log odds of voting left decreases by 0.4%.
+
+Education: In both models, the coefficient for education is positive and significant, indicating that higher levels of education are associated with a higher likelihood of voting left. In Model A, the coefficient is 0.204, while in Model B, it is 0.132.
+
+Gender: In both models, the coefficient for gender is positive and significant, indicating that females are more likely to vote left compared to males. In Model A, the coefficient is 0.232, while in Model B, it is 0.085.
+
+Trust in people: In modelA the coefficient for trust in people is positive and statistically significant (p < 0.001) (2.7%,p =0.005), suggesting that people who have higher levels of trust in others are more likely to vote for a left-wing party. while in Model B, it is 0.015. In both models, the coefficient for ppltrst is positive and significant.
+
+Left-right political views (rile): In Model B, the coefficient for left-right political views is negative and significant, indicating that individuals who hold left-wing political views are more likely to vote left compared to those who hold right-wing political views. The coefficient is -0.162.
+
+The AIC and BIC values for Model B are lower than Model A, indicating that Model B is a better fit for the data. The RMSE value is 0.34 for Model B, indicating that the model's predictions have an average deviation of 0.34 from the actual values.
+
+Based on the model results, left-right political views have a significant negative effect on participation in the election. With negative coefficients indicating that as voters become more right-wing, they are less likely to vote for left-wing parties. We can see in Model B, after controlling for age, education, gender, and trust in other people, the effect of left-right political views on participation in the election is still significant, the coefficient for left-right political views is -0.162, which means that for every one-unit increase in left-right political views (with higher values indicating more right-wing views), the odds of voting for left-wing parties decrease by a factor of exp(-0.162)
+
+## Task 2
+
+## Model result 
+
+This result of model presents the Model C and Model D like how people's left-right political views are related to their participation in the 2018 Election, with different political party families (Center-Right, Center-Left, Radical-Right, Radical-Left) as the outcome variables. 
+
+Both models include an intercept term for the reference category (Left), age, gender, and education as predictor variables. Model D includes an additional predictor variable lrscale and econlr.
+
+In Model C, the intercept for Center-Left is negative(-0.323), which means that the log-odds of being in the Center-Left category compared to the Left category are lower than one. The intercepts for the other categories (Radical-Right, Radical-Left, and Other) also negative, indicating that the log-odds of being in those categories are lower than one compared to the Left category. In Model D, the intercepts for all categories are positive,(Center-left:3,223;Radical Right:4.012;Radical Left: 1.877) which means that the log-odds of being in those categories compared to the Left category are higher than one.
+
+he coefficients for age, female, and education are consistent in both models. Age has a small and negative coefficient, indicating that as age increases, the log-odds of being in the non-reference categories compared to the Left category decrease slightly. Being female has a negative coefficient, which means that women have lower log-odds of being in the non-reference categories compared to men. Education has a negative coefficient for Center-Right, Center-Left, and Radical-Left, but a positive coefficient for Radical-Right and Other(model c:-0.339, -0.853;model D:-0.343,-0.860) which suggests that more educated individuals are more likely to vote for Radical-Right and Other parties compared to the other categories.
+
+Model D includes two additional predictors: placement on the left-right scale and economic left-right. Placement on the left-right scale has positive coefficients for all non-reference categories (0.020,0.016,0.016,0.012), indicating that as individuals' placement on the left-right scale moves towards the right, the log-odds of being in the non-reference categories compared to the Left category increase. Economic left-right has positive coefficients for all non-reference categories, suggesting that as individuals' economic views become more left-leaning, the log-odds of being in the non-reference categories compared to the Left category decrease.
+
+## Task 3
+
+## Model result
+
+The results indicate that the effect of average left-right political views on party choice varies significantly by gender, age, education, and placement on the left-right scale. Specifically, as average left-right political views increase, the log odds of choosing a certain party decrease for females, increase for younger individuals, decrease for those with higher levels of education, and increase for those who place themselves more on the left of the political spectrum.
+
+the interaction between average left-right political views and gender is significant, with a negative coefficient of -0.008, meaning that as a person's left-right political views increase, the probability of choosing a left-leaning party is higher for females than for males. The interaction between average left-right political views and education is also significant, with a negative coefficient of -0.017, meaning that as a person's left-right political views increase, the probability of choosing a left-leaning party is lower for those with a higher level of education.
+
+Additionally, the interaction between average left-right political views and age is significant, with a positive coefficient of 0.000, meaning that as a person's left-right political views increase, the probability of choosing a left-leaning party increases slightly with age. Finally, the interaction between average left-right political views and placement on the left-right scale is significant, with a positive coefficient of 0.001, indicating that as a person's left-right political views increase, the probability of choosing a left-leaning party increases.
+
+## plot result
+ 
+we can see that the predictor with the strongest positive effect on party choice is "Placement on left-right scale", with an OR of 1.001 (95% CI: 1.001, 1.002). This means that for every one-unit increase in a respondent's placement on the left-right scale, the odds of them choosing a party increase by a factor of 1.001 (or about 0.1%).
+
+The predictor with the next strongest positive effect is "Female (ref:male)", with an OR of 0.992 (95% CI: 0.987, 0.997). This means that female respondents are slightly less likely to choose a party than male respondents, with their odds of choosing a party being about 0.8% lower than male respondents, holding all other predictors constant.
+
+The predictor with the only negative effect is "Education", with an OR of 0.983 (95% CI: 0.980, 0.986). This means that respondents with higher levels of education are less likely to choose a party than those with lower levels of education, with their odds of choosing a party being about 1.7% lower for every additional level of education, holding all other predictors constant.
+
+Finally, the predictor "Age" has a very small positive effect on party choice, with an OR of 1.0004 (95% CI: 1.0003, 1.0005). This means that for every one-year increase in age, the odds of choosing a party increase by a factor of 1.0004 (or about 0.04%), holding all other predictors constant.
+
+Overall, this plot helps us visualize the relative strengths of each predictor's effect on party choice, and provides a quick reference for which predictors have significant effects and in which direction.
+
+## Conclusions
+
+In conclusion, the results of our analysis provide evidence that left-right political views, as measured by the placement on the left-right scale, are related to party choice.The findings suggest that political parties can strategically appeal to voters by tailoring their platforms and campaign strategies based on these individual-level factors. For example, parties that want to appeal to younger voters may want to emphasize issues that are particularly salient to that age group, such as climate change and student debt. Similarly, parties that want to appeal to more educated voters may want to emphasize policies that are aligned with their values, such as environmental protection and social justice.
+
+Future research could explore the relationship between political views and party choice in more detail,  to examine changes in political attitudes and voting behavior over time. Additionally, future research could investigate the role of party-level factors, such as campaign spending and media coverage, in shaping voter preferences. Overall, this analysis highlights the importance of understanding the complex interplay between individual-level and party-level factors in shaping political behavior.
+
+
+## References 
+
+Dalton, R. J. (2008). The quantity and the quality of party systems: Party system polarization, its measurement, and its consequences. Comparative political studies, 41(7), 899-920.
+
+Evans, G., & Tilley, J. (2017). The new politics of class: The political exclusion of the British working class. Oxford University Press.
+
+Holman, L., Head, J., & Neufeld, A. (2020). Gender, social norms, and survival in maritime disasters. Proceedings of the National Academy of Sciences, 117(33), 19677-19683.
+
+Knutsen, O. (2018). Voting in old and new democracies. Routledge.
+
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE,message = FALSE)
+rm(list=ls())
+library(tidyverse)
+library(haven)
+library(nnet)
+library(broom)
+library(modelr)
+library(modelsummary)
+library(kableExtra)
+library(sjlabelled)
+```
+
+
+```{r}
+# Read in ESS Round 9 data
+ess2018 <- read.csv("C:/Users/46765/OneDrive/Desktop/ESS9e03_1.csv")
+
+```
+
+```{r}
+tabl <- function(...)table(...,useNA = 'ifany')
+```
+
+
+```{r,results='hide'}
+
+ess_9 <- ess2018 |> select("essround", # REQUIRED: essround
+                      "idno", # REQUIRED: respondent ID
+                      "cntry", # REQUIRED: country 
+                      "gndr" , # gender
+                      "agea", # age
+                      "ppltrst",
+                      "vote",
+                      "lrscale",
+                      "anweight",
+                      starts_with("inw"), # REQUIRED: interview date 
+                      starts_with("edulvl"), # educational attainment (several vars)
+                      starts_with("prtv"), # party vote
+                      -ends_with("de1"), # drop 1st German vote intention var
+  )|>
+    as.data.frame()
+ # find FIRST country-specific vote variable
+  start <- head(grep("prtv", colnames(ess_9)), n=1)
+  # find LAST country-specific vote variable
+  end <- tail(grep("prtv", colnames(ess_9)), n=1)
+  # mini dataset of party choice vars
+  es.vote <- ess_9 %>% select(start:end)
+  # create dataset-wide vote variable by merging the country-specific vars
+  ess_9$party.vote.num <- as.vector(do.call(coalesce, es.vote))
+  # convert numeric values into party names
+  es.vote.named <- as_label(es.vote)
+  # convert factors into characters to make sure they're stored properly
+  es.vote.named[] <- lapply(es.vote.named, as.character)
+  # create another dataset-wide vote variable, this time for the character variable
+  ess_9$party.vote.name <- as.vector(do.call(coalesce, es.vote.named))
+  # convert to UTF encoding to deal with special characters
+  # delete unnecessary variables
+  start <- head(grep("prtvt", colnames(ess_9)), n=1)
+  end <- tail(grep("prtvt", colnames(ess_9)), n=1)
+  ess_9 <- ess_9 %>% select(-(start:end))
+  ess_9
+  val_labels(ess_9$edulvlb)
+  
+```
+
+
+
+```{r,results='hide'}
+# EDUCATION:
+# Let's create a dummy variable indicating that the respondent
+# has attained a bachelor's degree or above
+ess_9$edulvlb[ess_9$edulvlb == 5555]<- NA # "other"
+
+
+#Creating dummy for bachelors degree
+ess_9 <- ess_9 |> 
+  mutate(bachelor = case_when(edulvlb > 600 ~ 1,TRUE~ 0))
+
+```
+
+```{r,results='hide'}
+# gender
+table(ess_9$gndr)
+ess_9$female <- ifelse(ess_9$gndr==1, 0, ifelse(ess_9$gndr==2, 1, NA))
+
+# age
+table(ess_9$agea)
+ess_9$age <- ess_9$agea
+ess_9$age[ess_9$agea==999] <- NA
+table(ess_9$age)
+ess_9$age.group <- cut(ess_9$age, breaks=c(18,30,40,50,65,75,90))
+
+#year
+ess_9$essround <- 9
+
+ess_9$party.vote.ess <- ifelse(is.na(ess_9$party.vote.num), NA,
+                             paste0(ess_9$cntry, "-", ess_9$essround, "9", ess_9$party.vote.num))
+
+#country
+table(ess_9$cntry)
+ess_9$party.vote.ess <- ifelse(is.na(ess_9$party.vote.num), NA,
+                             paste0(ess_9$cntry, "-", ess_9$essround, "-", ess_9$party.vote.num))
+tabl(ess_9$party.vote.ess)
+```
+
+
+```{r,results='hide'}
+# load the ESS-Partyfacts extended crosswalk
+cw_ess_pf <- read_csv(url("https://raw.githubusercontent.com/sophieehill/ess-partyfacts-crosswalk/master/ess-partyfacts-extended.csv"))
+cw_ess_pf$party.vote.ess <- paste0(cw_ess_pf$cntry, "-", cw_ess_pf$essround, "-", cw_ess_pf$ess_id)
+cw_ess_pf <- cw_ess_pf %>% select(party.vote.ess, partyfacts_id, partyfacts_name)
+```
+
+```{r,results='hide'}
+# merge partyfacts IDs into main dataset
+ess_9 <- left_join(ess_9, cw_ess_pf, by=c("party.vote.ess"))
+tabl(ess_9$party.vote.ess)
+tabl(ess_9$partyfacts_ids)
+```
+
+```{r,results='hide'}
+# now load the Partyfacts-External crosswalk and select the Manifesto dataset
+# this lets us link those partyfacts IDs to *other* datasets
+cw_pf <- read_csv(url("https://partyfacts.herokuapp.com/download/external-parties-csv/"))
+cw_pf$dataset_party_id <- as.numeric(as.character(cw_pf$dataset_party_id))
+cw_pf_cmp <- cw_pf %>% filter(dataset_key == "manifesto") %>% select(partyfacts_id, dataset_party_id)
+
+names(cw_pf_cmp) <- c("partyfacts_id", "cmp_id")
+
+ess_9 <- left_join(ess_9, cw_pf_cmp, by=c("partyfacts_id"))
+table(ess_9$cmp_id)
+
+```
+
+```{r,results='hide'}
+# In order to merge in election-level variables (e.g. measures of a party's manifesto for a particular election)
+# First, let's import the dataset from Denis Cohen's github: https://github.com/denis-cohen/ess-election-dates
+ess_dates <- read_csv(url("https://raw.githubusercontent.com/denis-cohen/ess-election-dates/master/ess_election_dates.csv"))
+# select needed vars
+ess_dates <- ess_dates %>% select(cntry, essround, recent_election, recent_election_split1)
+# merge in
+ess_9 <- left_join(ess_9, ess_dates, by=c("cntry", "essround"))
+```
+
+```{r,results='hide'}
+ess_9 <- ess_9 %>% mutate(int.day = inwdds)%>%
+                   mutate(int.month = inwmms)%>%
+                  mutate(int.year =  inwyys)
+                                         
+ess_9 <- ess_9 %>% mutate(int.date = as.Date(paste(int.year, int.month, int.day, sep="-")))
+
+# for each respondent, let's define their "most recent election", based on start interview date
+ess_9 <- ess_9 %>% mutate(ref.election = case_when(int.date > recent_election ~ recent_election,
+                                    int.date <= recent_election ~ recent_election_split1))
+```
+
+
+```{r,results='hide'}
+
+# Merge with CMP data to get party families
+# Download latest CMP dataset
+# (Use API or just load "cmp.csv")
+library(manifestoR)
+# set API key
+mp_setapikey(key = "70af9d9d7f76a3d66d41142debe969f6")
+# download latest dataset
+cmp <- as.data.frame(mp_maindataset())
+# save for replicability
+# write.csv(cmp, "cmp_main_2020.csv")
+head(cmp)
+table(cmp$edate)
+summary(cmp$party)
+```
+
+```{r,results='hide'}
+# create election year variable
+cmp$election.year <- as.numeric(as.character(substr(cmp$date, 1, 4)))
+# create econ l-r and lib-auth scales, following Bakker & Hobolt (2013)
+cmp <- cmp %>% mutate(econlr = scale_logit(data=cmp,
+                                           pos=c("per401", "per402", "per407", "per505", 
+                                                 "per507", "per410", "per414", "per702"), 
+                                           neg=c("per403", "per404", "per406", "per504", 
+                                                 "per506", "per413", "per412", "per701", 
+                                                 "per405", "per409", "per415", "per503"),
+                                           zero_offset = 0.5))
+cmp <- cmp %>% mutate(econlr.sal = (per401 + per402 + per407 + per505 + per507 + per410 + per414 + per702) +
+                        (per403 + per404 + per406 + per504 + per506 + per413 + per412 + per701 + per405 + per409 + per415 + per503))
+
+
+summary(cmp$econlr.sal)
+cmp <- cmp %>% mutate(auth = scale_logit(data=cmp,
+                                         pos=c("per305", "per601", "per603", "per605", 
+                                               "per608", "per606"), 
+                                         neg=c("per501", "per602", "per604", "per502", 
+                                               "per607", "per416", "per705", "per706", 
+                                               "per201", "per202"),
+                                         zero_offset = 0.5))
+cmp <- cmp %>% mutate(auth.sal = (per305 + per601 + per603 + per605 + per608  + per606) +
+                        (per501 + per602 + per604 + per502 + per607 + per416 + per705 + per706 + per201 + per202))
+```
+
+```{r,results='hide'}
+# select party code, party family
+# as well as party-election specific variables like right/left coding of the manifesto
+cmp.x <- cmp %>% select(party, parfam, election.year, edate, rile, 
+                        econlr, econlr.sal, auth, auth.sal)
+names(cmp.x)[1:2] <- c("cmp_id", "cmp_parfam") # relabel for clarity
+head(cmp.x)
+ess_9$election.year <- as.numeric(as.character(substr(ess_9$ref.election, 1, 4)))
+table(ess_9$election.year)
+
+# match up by election year
+ess_9 <- left_join(ess_9, cmp.x, by=c("cmp_id", "election.year"))
+# alternatively we could match on exact election date
+ #cmp.x$election.date <- as.Date(cmp.x$edate)
+ #ess_9$election.date <- as.Date(ess_9$ref.election)
+ #ess_9 <- left_join(ess_9, cmp.x, by=c("cmp_id", "election.date"))
+```
+
+```{r,results='hide'}
+# create left vote recall based on party families
+# 10 = ecological
+# 20 = socialist or other left
+# 30 = social democratic
+ess_9$vote.left <- ifelse(ess_9$cmp_parfam==10 | ess_9$cmp_parfam==20 | ess_9$cmp_parfam==30, 1, 0)
+
+names(ess_9)
+head(ess_9)
+
+essx <- ess_9 %>% select(idno,vote, cntry, essround, int.date,
+                       female, age, age.group,bachelor,ppltrst, 
+                       party.vote.ess, partyfacts_id, partyfacts_name,
+                       cmp_id, cmp_parfam, vote.left, ref.election,
+                       election.year, edate, rile,
+                       econlr, econlr.sal, auth, auth.sal,lrscale,anweight) %>% 
+                        as.data.frame() %>% drop_na() 
+str(essx)
+```
+
+## Task1
+(1) Using data for all of Europe, examine how participation in the election is shaped by left-right political views. Be sure to control for age, education, and gender in your analysis.
+
+
+```{r}
+#change vote to factor variable
+essx$vote.left <- as.factor(essx$vote.left)
+#Calculate descriptive statistics for all five variables
+table_1 <- datasummary((Heading("")*1+Heading("")*vote.left)*(Heading("Number")*1 + Heading("Age")*age + Heading("Gender(female)")*female + Heading("High education")*bachelor) ~ Min + Max + Heading("Mean")*mean + Heading("SD")*sd + N + Percent(denom = Equal(vote.left)),
+            data = essx,
+            fmt = 2,
+            title = "Descriptive Statistics for Participants in the 2018 Europe Election (ESS)",
+            notes = c("Source: the European Social Survey (ESS) available on https://www.europeansocialsurvey.org/"),booktabs=TRUE) 
+  
+table_1 |>  kable_styling(latex_options = "hold_position")
+```
+
+
+
+```{r,results='hide'}
+# Create a binary logistic regression model
+model1 <- glm(vote.left ~  age + bachelor + female + ppltrst, data = essx, family = binomial())
+summary(model1)
+
+model2 <- glm(vote.left ~  age + bachelor + female + ppltrst + rile, data = essx, family = binomial())
+summary(model2)
+```
+
+```{r}
+# Put two models in one table
+# Present the raw coefficients
+models <- list("Model A" = model1,
+               "Model B" = model2)
+modelsummary(models,
+              coef_rename = c("(Intercept)"="Intercept",
+                                 "female"="Gender",
+                                 "age"="Age (years)",
+                                 "bachelor"="Education",
+                                 "rile" = " Left-right political views"
+                                 ),
+             shape = term ~ model,
+             fmt = 3,
+             stars = TRUE,
+             title = "left-right political views of participation in the 2018 Election.") |> 
+  footnote("Source: the 9th (2018) round of the European Social Survey (ESS).") |> 
+  kable_styling(latex_options = "hold_position")
+```
+
+
+## Task 2
+(2) Analyze which party family people voted for as a function their left-right political views. Your outcome should be polytomous, with different categories for different parties or voting blocs.We suggest merging in the “parfam” variable from the Party Manifesto data, potentially
+aggregating into party “blocs” as we did with the ESS data.
+
+```{r,results='hide'}
+# create party family or voting bloc variable
+essx$party_group <- ifelse(essx$cmp_parfam %in% c(10, 20, 30), "Center-Right", 
+                            ifelse(essx$cmp_parfam %in% c(40, 50), "Center-Left",
+                                   ifelse(essx$cmp_parfam %in% c(70, 80), "Radical-Right",
+                                          ifelse(essx$cmp_parfam %in% c(90, 100), "Radical-Left", "Other"))))
+essx <- essx |> 
+ mutate(party_group = fct_relevel(party_group,"Left"))
+ levels(essx$party_group)
+ 
+essx <- essx |> 
+  mutate(party_group = fct_infreq(party_group))
+
+# fit multinomial logistic regression model
+library(nnet)
+model3 <- multinom(party_group ~ age  +female +bachelor, data = essx)
+summary(model3) 
+
+model4 <- multinom(party_group ~ age+ female + bachelor + lrscale + econlr, data = essx)
+summary(model4)
+
+```
+
+
+```{r}
+# Put two models in one table
+# Present the raw coefficients
+models <- list("Model C" = model3,
+               "Model D" = model4)
+modelsummary(models,
+              coef_rename = c("(Intercept)"="Intercept (ref:Left)",
+                                 "age"="Age",
+                                 "bachelor"="Education",
+                                 "lrscale" = "Placement on left right scale",
+                                 "econlr" = "Economic Left/Right"
+                                 ),
+             shape = term ~ model + response,
+             fmt = 1,
+             stars = TRUE,
+             title = "left-right political views of participation in the 2018 Election.") |> 
+  footnote("Source: the 9th (2018) round of the European Social Survey (ESS).") |> 
+  kable_styling(font_size = 6,latex_options = "hold_position")
+```
+
+
+## Task 3
+(3) Using ESS data for the whole of Europe, along with Party Manifesto Data, analyze how
+left-right political views are related to party choice, where you consider left-rate ideological
+placement at the party and individual level as explanatory variables. Note that you should
+use the analytic weights when estimating your model.
+
+```{r,results='hide'}
+# only keep the variables we need for study in essx_1
+essx_1 <- essx |> 
+  select(idno,cntry,female,age,bachelor,partyfacts_name,cmp_parfam,party_group,anweight,rile,lrscale)
+View(essx_1)
+# Create a vector that contains all possible choices
+choices <- levels(as.factor(essx_1$party_group))
+# Create new id column since idno is kind of "jumping"
+essx_1$id <- 1:nrow(essx_1)
+# Create a vector. Repeat all ids for 4 times(the number of alternatives) and store the values in the new vector
+repe <- rep(1:nrow(essx_1),length(choices))
+
+# Expand essx_3. Repeat each row 
+essx_1 <- data.frame(essx_1[repe,],
+                       alt = factor(rep(choices, each = nrow(essx_1)))) 
+
+# Create a column based on whether the possible alternative was indeed the voter's choice(1/0) 
+essx_1 <- essx_1 |> 
+    mutate(choice = if_else(party_group == alt, 1, 0))
+
+# Group the original data frame by country, party_bloc, and partyfacts_name columns
+# Calculate the mean value of the rile column for each unique party
+df_avg_rile <- essx |> 
+  group_by(cntry,party_group,partyfacts_name) |> 
+  summarize(avg_rile = mean(rile))
+
+# But each unique party can be put in one of four choices(left, right, liberal, other)
+# We need to group the df_avg_rile again to get the real average rile for the four possible choices
+# Group df_avg_rile by country and partybloc columns
+# Calculate the mean value of the mean_rile column for each group
+df_final <- df_avg_rile |>  
+    group_by(cntry, party_group) |> 
+    summarize(avg_rile_x = mean(avg_rile)) |> 
+    drop_na()
+
+# Combine the essx_1 with df_final by country and party_bloc columns
+ess_long <- essx_1 |> 
+    left_join(df_final, 
+              by = c("cntry", "alt" = "party_group"))
+View(ess_long)
+# Improve the appearance of ess_long
+ess_long <- ess_long |> 
+  select(id,cntry,female,age,bachelor,anweight,alt,party_group,avg_rile_x,choice,lrscale)
+
+View(ess_long)
+
+```
+
+
+
+```{r,results='hide'}
+library(survival)
+
+# Fit the conditional logistic regression model
+clogit_model <- clogit(choice ~ strata(id) + avg_rile_x:female + avg_rile_x:age + 
+                         avg_rile_x:bachelor + avg_rile_x:lrscale,  data = ess_long, weights = anweight)
+
+summary(clogit_model)
+
+```
+
+```{r}
+modelsummary(clogit_model,
+              coef_rename = c( "age"="Age",
+                                 "bachelor"="Education",
+                                 "female" = "Female(ref:male)",
+                                 "lrscale" ="Placement on left right scale"),
+             fmt = 3,
+             stars = TRUE,
+             title = "Analysis on how left-right political views are related to party choice") |> 
+  footnote("Source: the 9th (2018) round of the European Social Survey (ESS).") |> 
+  kable_styling(latex_options = "hold_position")
+```
+
+
+```{r}
+#plot the best-fit model predict result
+theme_set(theme_light())
+
+estimates <- tidy(clogit_model, exponentiate = TRUE, conf.int = TRUE)
+
+estimates |>
+  filter(term != "(Intercept)") |>
+  ggplot(aes(term,estimate)) +
+  geom_hline(yintercept = 1, color = "red", linetype = "dashed") +
+  geom_point() +
+  scale_y_continuous(breaks = seq(0, 2.2, by = .2),limits = c(0, 2.2)) +
+  geom_errorbar(aes(ymin = conf.low, ymax = conf.high, width = .1)) +
+  coord_flip() +
+  labs(tittle = "Odds ratios plot for predicting the Best Picure Award Oscars",
+       y = "Odds ratios",
+       x = "Variables",
+       caption = "the 9th (2018) round of the European Social Survey (ESS).")
+```
+
+
+
+
+
